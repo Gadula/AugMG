@@ -36506,6 +36506,8 @@ struct transportation_t3A2B493655C19E160B7FEF09CF585278FFC2E29F  : public MonoBe
 {
 	// UnityEngine.GameObject[] transportation::objs
 	GameObjectU5BU5D_tFF67550DFCE87096D7A3734EA15B75896B2722CF* ___objs_4;
+	// UnityEngine.GameObject transportation::door
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___door_5;
 };
 
 // UnityEngine.Rendering.DebugUI/HistoryBoolField
@@ -44970,9 +44972,9 @@ IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4824[4] =
 IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4825[3] = 
 {
 	static_cast<int32_t>(offsetof(EnvMapAnimator_tFBDB01D5863979E446E8FF4A3A9C1EA6933D38DB, ___RotationSpeeds_4)),static_cast<int32_t>(offsetof(EnvMapAnimator_tFBDB01D5863979E446E8FF4A3A9C1EA6933D38DB, ___m_textMeshPro_5)),static_cast<int32_t>(offsetof(EnvMapAnimator_tFBDB01D5863979E446E8FF4A3A9C1EA6933D38DB, ___m_material_6)),};
-IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4826[1] = 
+IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4826[2] = 
 {
-	static_cast<int32_t>(offsetof(transportation_t3A2B493655C19E160B7FEF09CF585278FFC2E29F, ___objs_4)),};
+	static_cast<int32_t>(offsetof(transportation_t3A2B493655C19E160B7FEF09CF585278FFC2E29F, ___objs_4)),static_cast<int32_t>(offsetof(transportation_t3A2B493655C19E160B7FEF09CF585278FFC2E29F, ___door_5)),};
 IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4827[1] = 
 {
 };

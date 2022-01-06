@@ -5,6 +5,7 @@ using UnityEngine;
 public class transportation : MonoBehaviour
 {
     public GameObject[] objs;
+    public GameObject door;
 
     // Start is called before the first frame update
     void Start()
@@ -22,14 +23,19 @@ public class transportation : MonoBehaviour
         {
             foreach (var obj in objs)
             {
+                if (obj.name == "Front")
+                    obj.SetActive(false);
                 obj.layer = 7;
             }
         }
         //inside other world
         else
         {
+            door.transform.Rotate(0, -135, 0);
             foreach (var obj in objs)
             {
+                if (obj.name == "Front")
+                    obj.SetActive(true);
                 obj.layer = 0;
             }
         }
@@ -39,8 +45,11 @@ public class transportation : MonoBehaviour
     {
         foreach (var obj in objs)
         {
+            if (obj.name == "Front")
+                obj.SetActive(false);
             obj.layer = 7;
         }
+
     }
     // Update is called once per frame
     void Update()
