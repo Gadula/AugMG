@@ -3,7 +3,7 @@
 // - No Glow Option
 // - Softness is applied on both side of the outline
 
-Shader "TextMeshPro/Mobile/Distance Field" {
+Shader "Custom/Text" {
 
 Properties {
 	[HDR]_FaceColor     ("Face Color", Color) = (1,1,1,1)
@@ -51,6 +51,7 @@ Properties {
 
 	_CullMode			("Cull Mode", Float) = 0
 	_ColorMask			("Color Mask", Float) = 15
+        [Enum(Equal,3,NotEqual,6)] _StencilTest ("Stencil Test", int) = 6
 }
 
 SubShader {
@@ -64,8 +65,8 @@ SubShader {
 
 	Stencil
 	{
-		Ref [_Stencil]
-		Comp [_StencilComp]
+		Ref 1
+            Comp [_StencilTest]
 		Pass [_StencilOp]
 		ReadMask [_StencilReadMask]
 		WriteMask [_StencilWriteMask]

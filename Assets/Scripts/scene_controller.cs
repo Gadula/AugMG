@@ -11,4 +11,9 @@ public class scene_controller : MonoBehaviour
         SceneManager.LoadScene(sceneName);
     }
 
+    public void RedirectWeb()
+    {
+        Application.OpenURL("https://helloaugmg.wixsite.com/home");
+    }
+
 }

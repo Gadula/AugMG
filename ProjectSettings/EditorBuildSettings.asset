@@ -11,6 +11,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/AR_GreetingCard_1.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
+    path: Assets/Scenes/AR_PortalCard.unity
+    guid: 054471f0a64028e46b5fb908522042c7
   m_configObjects:
     UnityEditor.XR.ARCore.ARCoreSettings: {fileID: 11400000, guid: 7abf9e74bc894f646a493134b1f7b0a3, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 5dcf337ed55302f4280f38901e81f6ee, type: 2}
