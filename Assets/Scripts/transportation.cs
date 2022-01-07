@@ -6,11 +6,37 @@ public class transportation : MonoBehaviour
 {
     public GameObject[] objs;
     public GameObject door;
+    public Material[] skybox;
+    public GameObject[] themeWorlds;
+    public TMPro.TMP_Text greetings;
+    private int themeNum = 1;
+    private string currentTheme = "Chrsitmas";
+    public GameObject astronaut;
 
     // Start is called before the first frame update
     void Start()
     {
-
+        themeNum = PlayerPrefs.GetInt("theme");
+        switch (themeNum)
+        {
+            case 1:
+                currentTheme = "Christmas";
+                break;
+            case 2:
+                currentTheme = "Space";
+                break;
+        }
+        foreach (GameObject theme in themeWorlds)
+        {
+            if(currentTheme == theme.name)
+            {
+                theme.SetActive(true);
+            }
+            else
+            {
+                theme.SetActive(false);
+            }
+        }
     }
 
     void OnTriggerStay(Collider other)
@@ -32,12 +58,14 @@ public class transportation : MonoBehaviour
         else
         {
             door.transform.Rotate(0, -135, 0);
+           
             foreach (var obj in objs)
             {
                 if (obj.name == "Front")
                     obj.SetActive(true);
                 obj.layer = 0;
             }
+
         }
     }
 
@@ -54,6 +82,9 @@ public class transportation : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (currentTheme == "Space")
+        {
+            greetings.text = "You are my world <3";
+        }
     }
 }

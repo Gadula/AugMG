@@ -5,7 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class exit_manager : MonoBehaviour
 {
-
+    public void backHome()
+    {
+        SceneManager.LoadScene("AR_Menu");
+    }
     private void Update()
     {
         if(Input.GetKeyDown(KeyCode.Escape))
