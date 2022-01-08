@@ -10,7 +10,7 @@ public class transportation : MonoBehaviour
     public GameObject[] themeWorlds;
     public TMPro.TMP_Text greetings;
     private int themeNum = 1;
-    private string currentTheme = "Chrsitmas";
+    private string currentTheme = "Space";
     public GameObject astronaut;
 
     // Start is called before the first frame update
