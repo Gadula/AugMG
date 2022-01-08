@@ -301,8 +301,6 @@ struct CollisionController_tC228B9614FA82164ADCB547C8193689A25D1BEFB;
 struct Component_t39FBE53E5EFCF4409111FB22C15FF73717632EC3;
 // UnityEngine.Coroutine
 struct Coroutine_t85EA685566A254C23F3FD77AB5BDFFFF8799596B;
-// DataManager
-struct DataManager_tE86238CF20D1A233E0ADDA21C619896E5F278275;
 // System.DelegateData
 struct DelegateData_t9B286B493293CD2D23A5B2B5EF0E5B1324C2B77E;
 // UnityEngine.UI.Dropdown
@@ -4575,13 +4573,6 @@ struct CollisionController_tC228B9614FA82164ADCB547C8193689A25D1BEFB  : public M
 {
 };
 
-// DataManager
-struct DataManager_tE86238CF20D1A233E0ADDA21C619896E5F278275  : public MonoBehaviour_t532A11E69716D348D8AA7F854AFCBFCB8AD17F71
-{
-	// System.Int32 DataManager::theme
-	int32_t ___theme_4;
-};
-
 // DropdownSample
 struct DropdownSample_tCE5EBEBD2E880BDC4DF110CCD08388269E021100  : public MonoBehaviour_t532A11E69716D348D8AA7F854AFCBFCB8AD17F71
 {
@@ -7782,38 +7773,6 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void CollisionController_Update_mDE01FC244EB1
 }
 // System.Void CollisionController::.ctor()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void CollisionController__ctor_m3AAF4712D166BDC86E5338C2BAA2A66A5FF8FF41 (CollisionController_tC228B9614FA82164ADCB547C8193689A25D1BEFB* __this, const RuntimeMethod* method) 
-{
-	{
-		MonoBehaviour__ctor_m592DB0105CA0BC97AA1C5F4AD27B12D68A3B7C1E(__this, NULL);
-		return;
-	}
-}
-#ifdef __clang__
-#pragma clang diagnostic pop
-#endif
-#ifdef __clang__
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Winvalid-offsetof"
-#pragma clang diagnostic ignored "-Wunused-variable"
-#endif
-// System.Void DataManager::Start()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DataManager_Start_m29149084C328BA04088BB5398109A6107C41F1D4 (DataManager_tE86238CF20D1A233E0ADDA21C619896E5F278275* __this, const RuntimeMethod* method) 
-{
-	{
-		// }
-		return;
-	}
-}
-// System.Void DataManager::Update()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DataManager_Update_m11CFD8D41031CFD57FAFAA2FDC724881200965E6 (DataManager_tE86238CF20D1A233E0ADDA21C619896E5F278275* __this, const RuntimeMethod* method) 
-{
-	{
-		// }
-		return;
-	}
-}
-// System.Void DataManager::.ctor()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DataManager__ctor_mD735B7F80F3DE13E2BB45118CDA7FA619330DCDA (DataManager_tE86238CF20D1A233E0ADDA21C619896E5F278275* __this, const RuntimeMethod* method) 
 {
 	{
 		MonoBehaviour__ctor_m592DB0105CA0BC97AA1C5F4AD27B12D68A3B7C1E(__this, NULL);

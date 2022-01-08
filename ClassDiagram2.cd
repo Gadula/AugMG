@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="CameraControl" Collapsed="true">
+    <Position X="0.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\CameraControl.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CollisionController" Collapsed="true">
+    <Position X="3" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAACAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\CollisionController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="exit_manager" Collapsed="true">
+    <Position X="5.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\exit_manager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ImageRecognition" Collapsed="true">
+    <Position X="8.5" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAAAAAAAAAAAAAAAAAAAAACAAIAAAAAAAACEA=</HashCode>
+      <FileName>Assets\Scripts\ImageRecognition.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="scene_controller" Collapsed="true">
+    <Position X="6.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAADAAAAAAABAACAQQAAAAADAAQgAAAAAAEAA=</HashCode>
+      <FileName>Assets\Scripts\scene_controller.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="transportation" Collapsed="true">
+    <Position X="9.25" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAQBAAAACCCkABAAAgAAAAAAAAAAAAAAAAAAAAAAADA=</HashCode>
+      <FileName>Assets\Scripts\transportation.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
