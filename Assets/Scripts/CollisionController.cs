@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CollisionController : MonoBehaviour
 {
-
+    public GameObject doorWing;
 
     // Start is called before the first frame update
     void Start()
@@ -14,9 +14,23 @@ public class CollisionController : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.name == "doorWing")
+        if (other.name == "Door")
         {
-            other.transform.Rotate(0, 135, 0);
+        
+            doorWing.transform.Rotate(0, 135, 0);
+
+        }
+        
+    }
+
+    void OnTriggerExit(Collider other)
+    {
+        // Destroy everything that leaves the trigger
+        if (other.name == "Door")
+        {
+
+            doorWing.transform.Rotate(0, -135, 0);
+
         }
     }
 

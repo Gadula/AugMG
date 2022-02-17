@@ -45,7 +45,7 @@ public class transportation : MonoBehaviour
             return;
 
         //outside of other world
-        if (transform.position.z > other.transform.position.z)
+        if (other.transform.position.z <= 1.78)
         {
             foreach (var obj in objs)
             {
@@ -55,9 +55,9 @@ public class transportation : MonoBehaviour
             }
         }
         //inside other world
-        else
+        else 
         {
-            door.transform.Rotate(0, -135, 0);
+            
            
             foreach (var obj in objs)
             {
@@ -85,6 +85,7 @@ public class transportation : MonoBehaviour
         if (currentTheme == "Space")
         {
             greetings.text = "You are my world <3";
+
         }
     }
 }
