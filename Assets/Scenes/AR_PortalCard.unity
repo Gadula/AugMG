@@ -1308,14 +1308,14 @@ MonoBehaviour:
   - {fileID: 1569092787}
   - {fileID: 368023667}
   - {fileID: 2075606692}
+  - {fileID: 235775602}
+  - {fileID: 188176839}
   - {fileID: 1731537118}
   - {fileID: 282612002}
   - {fileID: 531841410}
-  - {fileID: 1131803500}
-  - {fileID: 235775602}
   - {fileID: 1894822325}
   - {fileID: 2075606692}
-  - {fileID: 531841410}
+  - {fileID: 1131803500}
   door: {fileID: 314945165}
   skybox:
   - {fileID: 2100000, guid: 81f714daf7144784b8a2f42f1cd30927, type: 2}

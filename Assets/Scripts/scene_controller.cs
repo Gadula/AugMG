@@ -42,6 +42,14 @@ public class scene_controller : MonoBehaviour
             {
                 SceneManager.LoadScene("AR_Marker_1");
             }
+            else if (secondLetter == "2")
+            {
+                SceneManager.LoadScene("AR_Marker_2");
+            }
+            else if (secondLetter == "3")
+            {
+                SceneManager.LoadScene("AR_Marker_3");
+            }
             else
                 wrongInput = true;
         }
