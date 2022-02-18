@@ -50,7 +50,8 @@ public class scene_controller : MonoBehaviour
                 Debug.Log("validating..");
                 CodeInput.SetActive(false);
                 loading.SetActive(true);
-                var data = checkCodeValidation((firstLetter + secondLetter), code);
+                string cardType = firstLetter + secondLetter;
+                var data = checkCodeValidation(cardType, code);
                 PlayerPrefs.SetInt("customised", 1);
                 // loading screen
                 // check code from database
@@ -59,7 +60,11 @@ public class scene_controller : MonoBehaviour
                     // correct code
                     // store text and image
                     PlayerPrefs.SetString("cust_text", data.text);
-                    StartCoroutine(LoadImage(data.url));
+                    if(cardType == "B2" || cardType == "b2")
+                    {
+                        StartCoroutine(LoadImage(data.url));
+                    }
+                    
                     LoadScene();
                 }
                 else
@@ -121,7 +126,7 @@ public class scene_controller : MonoBehaviour
     {
         foreach(var data in json_data.json)
         {
-            if (data.cardType == card_type && data.product_id == product_id)
+            if (data.cardType.ToUpper() == card_type && data.product_id == product_id)
                 return data;
         }
         return null;
