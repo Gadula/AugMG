@@ -1,8 +1,9 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
+using System.IO;
+using UnityEngine.Networking;
 
 public class scene_controller : MonoBehaviour
 {
@@ -10,9 +11,14 @@ public class scene_controller : MonoBehaviour
     public GameObject CodeInput;
     public TMP_Text codePrompt;
     private bool wrongInput = false;
-    private int theme;
+    public static Data json_data;
+    public GameObject loading;
 
     private string input;
+    private int str_len = 0;
+    private string firstLetter = "";
+    private string secondLetter = "";
+    public static Texture2D cust_texture;
 
     private void Start()
     {
@@ -25,15 +31,56 @@ public class scene_controller : MonoBehaviour
         input = s;
     }
 
-    //public void LoadScene(string sceneName)
-    //{
-    //    SceneManager.LoadScene(sceneName);
-    //}
+    public void SetScene()
+    {
+        str_len = input.Length;
+        firstLetter = input.Substring(0,1);
+        secondLetter = input.Substring(1,1);
+        if(str_len > 2)
+        {
+            string thirdLetter = input.Substring(2, 1);
+            string code = input.Substring(3, str_len-3);
+            Debug.Log("3rd: " + thirdLetter);
+            if (thirdLetter != "_")
+            {
+                wrongInput = true;
+            }
+            else
+            {
+                Debug.Log("validating..");
+                CodeInput.SetActive(false);
+                loading.SetActive(true);
+                var data = checkCodeValidation((firstLetter + secondLetter), code);
+                PlayerPrefs.SetInt("customised", 1);
+                // loading screen
+                // check code from database
+                if (data != null)
+                {
+                    // correct code
+                    // store text and image
+                    PlayerPrefs.SetString("cust_text", data.text);
+                    StartCoroutine(LoadImage(data.url));
+                    LoadScene();
+                }
+                else
+                {
+                    CodeInput.SetActive(true);
+                    loading.SetActive(false);
+                    wrongInput = true;
+                }
+
+            }
+        }
+        //Load default cards
+        else
+        {
+            PlayerPrefs.SetInt("customised", 0);
+            LoadScene();
+        }
+    }
 
     public void LoadScene()
     {
-        string firstLetter = input.Substring(0,1);
-        string secondLetter = input.Substring(1,1);
         if (firstLetter == "A" || firstLetter == "a")
         {
             //Load Marker-based AR
@@ -69,10 +116,34 @@ public class scene_controller : MonoBehaviour
         {
             wrongInput = true;
         }
-        
+    }
+    public JSONSerialize checkCodeValidation(string card_type, string product_id)
+    {
+        foreach(var data in json_data.json)
+        {
+            if (data.cardType == card_type && data.product_id == product_id)
+                return data;
+        }
+        return null;
     }
 
-    public void switchMenu()
+    IEnumerator LoadImage(string ImageURL)
+    {
+        UnityWebRequest www = UnityWebRequestTexture.GetTexture(ImageURL);
+        yield return www.SendWebRequest();
+
+        if(www.result != UnityWebRequest.Result.Success)
+        {
+            Debug.Log(www.error);
+        }
+        else
+        {
+            //fetch texture
+            cust_texture = ((DownloadHandlerTexture)www.downloadHandler).texture;
+        }
+    }
+
+public void switchMenu()
     {
         if (MainMenu.activeSelf)
         {
@@ -85,12 +156,11 @@ public class scene_controller : MonoBehaviour
             CodeInput.SetActive(false);
         }
 
-
     }
 
     public void RedirectWeb()
     {
-        Application.OpenURL("https://helloaugmg.wixsite.com/home");
+        Application.OpenURL("https://augmg.site/augmg/index.php");
     }
 
     private void Update()

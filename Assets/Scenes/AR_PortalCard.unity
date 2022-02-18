@@ -675,6 +675,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   doorWing: {fileID: 314945165}
+--- !u!1 &332717587 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4225364710978751868, guid: 2abf19653d633114faedf3b60dc6c39f, type: 3}
+  m_PrefabInstance: {fileID: 1894822324}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &346338420
 GameObject:
   m_ObjectHideFlags: 0
@@ -1299,7 +1304,7 @@ MonoBehaviour:
   - {fileID: 1894822325}
   - {fileID: 2075606692}
   - {fileID: 1131803500}
-  - {fileID: 0}
+  - {fileID: 332717587}
   door: {fileID: 314945165}
   skybox:
   - {fileID: 2100000, guid: 81f714daf7144784b8a2f42f1cd30927, type: 2}
@@ -1308,6 +1313,9 @@ MonoBehaviour:
   - {fileID: 1824522252}
   greetings: {fileID: 2075606694}
   astronaut: {fileID: 1894822325}
+  face: {fileID: 332717587}
+  checktex: {fileID: 0}
+  faceTex: {fileID: 0}
 --- !u!65 &790253324
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1423,7 +1431,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1029597326
 Transform:
   m_ObjectHideFlags: 0
@@ -1886,6 +1894,7 @@ GameObject:
   - component: {fileID: 1353310798}
   - component: {fileID: 1353310800}
   - component: {fileID: 1353310799}
+  - component: {fileID: 1353310801}
   m_Layer: 7
   m_Name: AR Camera
   m_TagString: Untagged
@@ -2069,6 +2078,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &1353310801
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1353310791}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec6d10c7e55698f4ca27e9bf8ecbdad7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 0.1
 --- !u!4 &1507340691 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 435620, guid: a683bfbbfaf93ca46beefd0d0ca19b1f, type: 3}
@@ -2294,7 +2316,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1824522253
 Transform:
   m_ObjectHideFlags: 0
@@ -2502,6 +2524,10 @@ PrefabInstance:
     - target: {fileID: 114551384804589004, guid: 2abf19653d633114faedf3b60dc6c39f, type: 3}
       propertyPath: gravity
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4225364710978751868, guid: 2abf19653d633114faedf3b60dc6c39f, type: 3}
+      propertyPath: m_Name
+      value: Face
       objectReference: {fileID: 0}
     - target: {fileID: 4225364710978751868, guid: 2abf19653d633114faedf3b60dc6c39f, type: 3}
       propertyPath: m_Layer

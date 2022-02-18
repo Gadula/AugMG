@@ -13,9 +13,37 @@ public class transportation : MonoBehaviour
     private string currentTheme = "Space";
     public GameObject astronaut;
 
+    public GameObject face;
+    public SpriteRenderer faceTex;
+
     // Start is called before the first frame update
     void Start()
     {
+        // check if to show default card
+        if(PlayerPrefs.GetInt("customised") == 0)
+        {
+            // show default
+            if (currentTheme == "Space")
+            {
+                greetings.text = "You are my world <3";
+                face.SetActive(false);
+            }
+            else if (currentTheme == "Christmas")
+            {
+                greetings.text = "Merry Christmas!";
+            }
+        }
+        else
+        {
+            // show customized
+            //set customized text
+            greetings.text = PlayerPrefs.GetString("cust_text");
+            //set customized image
+            faceTex = face.GetComponent<SpriteRenderer>();
+            faceTex.sprite = Sprite.Create(scene_controller.cust_texture, new Rect(0.0f, 0.0f, scene_controller.cust_texture.width, scene_controller.cust_texture.height), new Vector2(0.5f, 0.5f), 100.0f);
+
+        }
+
         themeNum = PlayerPrefs.GetInt("theme");
         switch (themeNum)
         {
@@ -82,10 +110,5 @@ public class transportation : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (currentTheme == "Space")
-        {
-            greetings.text = "You are my world <3";
-
-        }
     }
 }
